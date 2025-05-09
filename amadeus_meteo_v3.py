@@ -416,20 +416,3 @@ for a in page_slice:
         st.markdown(f"[📅 Book]({a['bookingLink']})", unsafe_allow_html=True)
 
     st.markdown("---")  # separator between activities
-
- import streamlit as st
-from streamlit_searchbox import st_searchbox
-
-def my_search_function(query: str) -> list:
-    items = ["Apple", "Apricot", "Avocado", "Banana", "Blackberry"]
-    return [item for item in items if query.lower() in item.lower()]
-
-st.title("🍓 Fruit Finder")
-selected = st_searchbox(
-    my_search_function,
-    placeholder="Type to search fruits…",
-    key="fruit_search"
-)
-
-st.write("You picked:", selected)
-
